@@ -1,3 +1,13 @@
+const myLibrary = []
+
+const book = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false)
+console.log(book.info())
+
+console.log(Object.getPrototypeOf(book) === Book.prototype)
+console.log(book.valueOf())
+
+addBookToLibrary(book, myLibrary)
+
 function Book(title, author, pages, read) {
     this.title = title
     this.author = author
@@ -9,8 +19,6 @@ function Book(title, author, pages, read) {
     }
 }
 
-const book = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false)
-console.log(book.info())
-
-console.log(Object.getPrototypeOf(book) === Book.prototype)
-console.log(book.valueOf())
+function addBookToLibrary(book, library) {
+    library.push(book)
+}
